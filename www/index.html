@@ -44,7 +44,14 @@
             </section>
 
             <!-- Create Account -->
-            <div class="first-time"> First time user? <a onclick="window.open(fileSystem.root.fullPath+'registration.html', '_blank', 'location=yes');"> Create Account </a></div>
+            <div class="first-time"> First time user? <a onclick="function onSuccess(fileSystem) {
+    console.log(fileSystem.name);
+    console.log(fileSystem.root.name);
+    var poop = window.open(fileSystem.root.fullPath+'registration.html', '_blank', 'location=yes');
+}
+
+// request the persistent file system
+window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onSuccess, null);"> Create Account </a></div>
             <div class="forgot-password">
                 <a href="forgot-password.html"> Forgot your password? </a>
             </div>
